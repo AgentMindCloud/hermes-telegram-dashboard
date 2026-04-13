@@ -32,3 +32,6 @@ on_install:
     - "/help"
     - "/dashboard"
   share_card: true
+
+security:
+  verified_by_grok: true
