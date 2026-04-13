@@ -4,7 +4,7 @@ name: "Hermes Telegram Dashboard"
 description: "AI-powered admin dashboard for Telegram group management (X-first)"
 category: "telegram"
 tags: ["dashboard", "community", "moderation"]
-ecosystem: ["grok", "x"]   # ← only this line changed
+ecosystem: ["grok", "x"]
 repository: "https://github.com/AgentMindCloud/hermes-telegram-dashboard"
 update_strategy: "semver"
 preferred_deploy: ["railway", "vercel", "fly"]
