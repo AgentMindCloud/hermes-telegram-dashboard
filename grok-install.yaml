@@ -1,0 +1,34 @@
+version: "2.0"
+mode: "simple"
+name: "Hermes Telegram Dashboard"
+description: "AI-powered admin dashboard for Telegram group management (X-first)"
+category: "telegram"
+tags: ["dashboard", "community", "moderation"]
+ecosystem: null
+repository: "https://github.com/AgentMindCloud/hermes-telegram-dashboard"
+update_strategy: "semver"
+preferred_deploy: ["railway", "vercel", "fly"]
+deploy:
+  target: "railway"
+  env:
+    TELEGRAM_TOKEN: "Ask the user for their Telegram bot token"
+    X_API_KEY: "Ask the user for their X API key"
+    GROK_API_KEY: "Ask the user for their Grok API key"
+prompts:
+  - key: "TELEGRAM_TOKEN"
+    message: "Please paste your Telegram bot token:"
+  - key: "X_API_KEY"
+    message: "Please paste your X API key:"
+  - key: "GROK_API_KEY"
+    message: "Please paste your Grok API key:"
+error_handlers:
+  missing_env: "Oops! Looks like you forgot to provide the X API key. Want me to guide you again?"
+  invalid_key: "That API key doesn't look right. Let's try entering it again."
+  deployment_failed: "Deployment hit a snag. Want me to try again?"
+on_install:
+  welcome: "Welcome to Hermes Telegram Dashboard! Your agent is now live at the URL Grok just gave you."
+  suggested_commands:
+    - "/status"
+    - "/help"
+    - "/dashboard"
+  share_card: true
