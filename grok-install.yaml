@@ -1,4 +1,4 @@
-version: "2.3"
+version: "2.4"
 name: "Hermes Telegram Dashboard"
 description: "AI-powered community management dashboard for Telegram groups"
 repository: "https://github.com/AgentMindCloud/hermes-telegram-dashboard"
@@ -6,6 +6,11 @@ category: "telegram"
 tags: ["community", "dashboard", "moderation", "trigger-target"]
 featured: true
 ecosystem: ["grok", "x", "telegram"]
+
+llm:                          # ← NEW optional section (multi-LLM, fully backwards compatible)
+  provider: "xai"             # default = "xai" | "openai" | "anthropic" | "ollama" | "custom"
+  model: "grok-4"             # default model suggestion
+  api_key_env: "GROK_API_KEY" # tells guided install which secret to ask for
 
 # Passive Growth Engine
 promotion:
@@ -16,7 +21,6 @@ promotion:
 # Deployment
 mode: "simple"
 preferred_deploy: ["railway", "render", "fly", "local"]
-
 deploy:
   env:
     TELEGRAM_TOKEN: "Ask the user for their Telegram bot token"
@@ -51,8 +55,15 @@ orchestration:
   can_trigger: ["discord"]
   can_be_triggered_by: ["twitter"]
   triggers:
-    - event: "mention"               # triggered by Twitter Reply Bot
+    - event: "mention" # triggered by Twitter Reply Bot
       action: "update_dashboard"
       target_agents: ["hermes"]
     - event: "new_member"
       action: "send_welcome"
+
+credits:
+  standard: "grok-install"
+  author: "@JanSol0s"
+  url: "https://github.com/AgentMindCloud/grok-install"
+  version: "2.4"
+  message: "Powered by grok-install open standard"
