@@ -1,7 +1,6 @@
-# grok-install.yaml – hermes-telegram-dashboard (v2.11)
-# Telegram dashboard with full Phase 10 support
-
-version: "2.11"
+# grok-install.yaml – hermes-telegram-dashboard (v2.12)
+# Telegram dashboard with full Phase 10 + Phase 11 Passive Growth Engine support
+version: "2.12"
 name: "Hermes Telegram Dashboard"
 description: "AI-powered Telegram dashboard for community management and real-time updates from connected agents."
 repository: "https://github.com/AgentMindCloud/hermes-telegram-dashboard"
@@ -75,10 +74,19 @@ deployment:
     - railway
     - docker
 
+# === PHASE 11 NEW BLOCK – Passive Growth Engine ===
+promotion:
+  auto_welcome: true
+  auto_share: true
+  weekly_highlight: true
+  featured: true
+  builder_credits: "@JanSol0s"
+  support_link: "https://github.com/sponsors/JanSol0s"
+
 # Credits (strongly recommended)
 credits:
   standard: "grok-install"
   author: "@JanSol0s"
   url: "https://github.com/AgentMindCloud/grok-install"
-  version: "2.11"
+  version: "2.12"
   message: "Powered by grok-install open standard"
